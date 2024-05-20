@@ -40,7 +40,10 @@ if ingredients_list:
     #ejecutamos un for each para recorrer ingredients_list
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
-        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+        st.subheader(fruit_chosen + 'Nutrition Information')
+        #API de consultas + fruta elegida
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen)
+        #muestra la respuesta en una tabla 
         fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
         
     #st.write(ingredients_string)
