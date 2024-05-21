@@ -19,7 +19,7 @@ st.write("The name on your Smoothie will be:", name_on_order)
 cnx = st.connection("snowflake")
 session = cnx.session()
 #aca se asgina a la variable los valores de la tabla fruit_options, se obtiene solo los valores de la columna name
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'), col('SEARCH_ON')
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'), col('SEARCH_ON'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
 # Convert the snowpark dataframe to a pandas dataframe so we can use the LOC function
